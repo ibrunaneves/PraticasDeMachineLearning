@@ -28,59 +28,89 @@ Cada notebook contém:
 
 ## Práticas Desenvolvidas
 
+---
+
 ### **Questão 1 — Classificação com Random Forest (Iris Dataset)**  
-Objetivo: Treinar um modelo de classificação para identificar espécies de flores com base em características do conjunto Iris.  
-Técnicas:
+
+**Objetivo:**  
+Treinar um modelo de classificação para identificar espécies de flores com base em características do conjunto Iris.
+
+**Técnicas Aplicadas:**
 - Uso do `RandomForestClassifier`
 - Avaliação com `accuracy_score` e `classification_report`
 - Divisão de dados com `train_test_split`
 
-**Resultados**:
-- Accuracy acima de 95%
-- Boa capacidade de generalização
-- Importância das features foi analisada
+**Resultado:**  
+O modelo atingiu **acurácia acima de 95%**, com ótima capacidade de generalização.
+
+**Insights:**
+- A espécie *Setosa* foi perfeitamente classificada.
+- A maior confusão ocorreu entre *Versicolor* e *Virginica*, o que é esperado pela sobreposição de atributos.
+- A análise de importância das features mostrou que *petal length* e *petal width* foram as mais relevantes.
 
 ---
 
 ### **Questão 2 — Detecção de Fraudes em Cartões de Crédito**  
-Objetivo: Identificar transações potencialmente fraudulentas a partir de dados financeiros.  
-Técnicas:
-- Dataset de fraudes do Kaggle (ou simulado)
+
+**Objetivo:**  
+Identificar transações potencialmente fraudulentas a partir de dados financeiros.
+
+**Técnicas Aplicadas:**
+- Dataset de fraudes do Kaggle (ou gerado artificialmente)
 - Normalização com `StandardScaler`
 - Classificação com `RandomForestClassifier`
 - Avaliação com precisão, recall e F1-score
 
-**Insights**:
-- Importância de avaliar **recall** para detectar fraudes
-- Técnicas de melhoria: SMOTE, XGBoost, tuning com `GridSearchCV`
+**Resultado:**  
+O modelo conseguiu detectar fraudes com **bom recall para a classe 1 (fraude)**, mas apresentou **falsos positivos**.
+
+**Insights:**
+- O dataset era fortemente desbalanceado (fraudes são raras), o que impactou o desempenho geral.
+- Métricas como **recall e F1-score** foram mais relevantes que acurácia.
+- Modelos mais avançados como XGBoost ou técnicas de reamostragem (SMOTE) podem melhorar o resultado.
 
 ---
 
-### **Questão 3 — Segmentação de Clientes (K-Means)**  
-Objetivo: Agrupar clientes com base em seu comportamento de compra para gerar insights de marketing.  
-Técnicas:
-- Geração de dados simulados
-- Elbow Method para definir o número de clusters
+### **Questão 3 — Segmentação de Clientes com K-Means**
+
+**Objetivo:**  
+Agrupar clientes com base em comportamento de compra, identificando perfis de consumo.
+
+**Técnicas Aplicadas:**
+- Geração de dados simulados (quantidade de compras, valor gasto e frequência)
+- Elbow Method para definição do número ideal de clusters
 - Clusterização com `KMeans`
-- Visualização com `matplotlib`
+- Visualização dos grupos com gráficos de dispersão
 
-**Clusters Identificados**:
-- Clientes premium (muito gasto e alta frequência)
-- Compradores eventuais (baixo gasto)
-- Clientes fidelizáveis (frequência alta, ticket médio)
+**Resultado:**  
+A análise indicou **4 clusters distintos** com características bem separadas.
+
+**Insights:**
+- Foram identificados clientes:
+  - Premium (alto gasto e frequência)
+  - Ocasionais (baixo gasto e poucas compras)
+  - Regulares (perfil mediano)
+  - Fiel de ticket médio (alta frequência, valor moderado)
+- A segmentação ajuda a criar campanhas direcionadas para retenção, fidelização e reativação.
 
 ---
 
-### **Questão 4 — Clusterização de Pacientes com Dados de Saúde**  
-Objetivo: Identificar padrões de saúde em pacientes com base em variáveis clínicas.  
-Técnicas:
-- Simulação de dados com idade, IMC, glicose, colesterol, PA
+### **Questão 4 — Clusterização de Pacientes com Dados de Saúde**
+
+**Objetivo:**  
+Identificar padrões de saúde em pacientes com base em variáveis clínicas (idade, IMC, PA, glicose e colesterol).
+
+**Técnicas Aplicadas:**
+- Geração de dados simulados
 - Normalização com `StandardScaler`
 - Redução de dimensionalidade com `PCA`
-- Agrupamento com `KMeans`
-- Interpretação de clusters com `groupby().mean()`
+- Clusterização com `KMeans`
+- Análise de médias por grupo
 
-**Resumo dos Grupos**:
+**Resultado:**  
+O modelo agrupou os pacientes em **3 clusters clínicos distintos**, facilitando a interpretação visual com PCA.
+
+**Resumo dos Grupos:**
 
 | Cluster | Idade | IMC | Pressão | Glicose | Colesterol |
 |--------:|------:|-----:|--------:|--------:|------------:|
@@ -88,7 +118,7 @@ Técnicas:
 |   1     | 35.1  | 24.1 | 117.5   |  95.4   | 172.0       |
 |   2     | 59.8  | 28.3 | 121.3   |  98.2   | 185.6       |
 
-**Interpretação**:
-- Cluster 0: Grupo de alto risco cardiovascular
-- Cluster 1: Perfil saudável
-- Cluster 2: Idosos com variações moderadas
+**Interpretação:**
+- Cluster 0 representa pacientes com **maior risco cardiovascular** (IMC, PA e colesterol elevados).
+- Cluster 1 representa um grupo **mais jovem e saudável**, com todos os parâmetros em níveis normais.
+- Cluster 2 agrupa pacientes **idosos com variações intermediárias**, sugerindo a necessidade de acompanhamento contínuo.
