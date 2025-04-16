@@ -3,7 +3,7 @@ Este repositório reúne uma série de exercícios práticos com foco em **Machi
 
 ---
 
-## Tecnologias Utilizadas
+## Tecnologias utilizadas
 
 - Python 3.11
 - Google Colab
@@ -26,7 +26,7 @@ Cada notebook contém:
 
 ---
 
-## Práticas Desenvolvidas
+## Práticas desenvolvidas
 
 ---
 
@@ -35,7 +35,7 @@ Cada notebook contém:
 **Objetivo:**  
 Treinar um modelo de classificação para identificar espécies de flores com base em características do conjunto Iris.
 
-**Técnicas Aplicadas:**
+**Técnicas aplicadas:**
 - Uso do `RandomForestClassifier`
 - Avaliação com `accuracy_score` e `classification_report`
 - Divisão de dados com `train_test_split`
@@ -50,12 +50,12 @@ O modelo atingiu **acurácia acima de 95%**, com ótima capacidade de generaliza
 
 ---
 
-### **Questão 2 — Detecção de Fraudes em Cartões de Crédito**  
+### **Questão 2 — Detecção de fraudes em cartões de crédito**  
 
 **Objetivo:**  
 Identificar transações potencialmente fraudulentas a partir de dados financeiros.
 
-**Técnicas Aplicadas:**
+**Técnicas aplicadas:**
 - Dataset de fraudes do Kaggle (ou gerado artificialmente)
 - Normalização com `StandardScaler`
 - Classificação com `RandomForestClassifier`
@@ -71,12 +71,12 @@ O modelo conseguiu detectar fraudes com **bom recall para a classe 1 (fraude)**,
 
 ---
 
-### **Questão 3 — Segmentação de Clientes com K-Means**
+### **Questão 3 — Segmentação de clientes com K-Means**
 
 **Objetivo:**  
 Agrupar clientes com base em comportamento de compra, identificando perfis de consumo.
 
-**Técnicas Aplicadas:**
+**Técnicas aplicadas:**
 - Geração de dados simulados (quantidade de compras, valor gasto e frequência)
 - Elbow Method para definição do número ideal de clusters
 - Clusterização com `KMeans`
@@ -95,12 +95,12 @@ A análise indicou **4 clusters distintos** com características bem separadas.
 
 ---
 
-### **Questão 4 — Clusterização de Pacientes com Dados de Saúde**
+### **Questão 4 — Clusterização de pacientes com dados de saúde**
 
 **Objetivo:**  
 Identificar padrões de saúde em pacientes com base em variáveis clínicas (idade, IMC, PA, glicose e colesterol).
 
-**Técnicas Aplicadas:**
+**Técnicas aplicadas:**
 - Geração de dados simulados
 - Normalização com `StandardScaler`
 - Redução de dimensionalidade com `PCA`
@@ -110,7 +110,7 @@ Identificar padrões de saúde em pacientes com base em variáveis clínicas (id
 **Resultado:**  
 O modelo agrupou os pacientes em **3 clusters clínicos distintos**, facilitando a interpretação visual com PCA.
 
-**Resumo dos Grupos:**
+**Resumo dos grupos:**
 
 | Cluster | Idade | IMC | Pressão | Glicose | Colesterol |
 |--------:|------:|-----:|--------:|--------:|------------:|
